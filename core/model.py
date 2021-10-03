@@ -52,7 +52,7 @@ class SuperResolutionModel(nn.Module):
         return x, output
 
 
-if __name__ == '__main__':
-    model = SuperResolutionModel()
-
-    torchsummary.summary(model=model, input_data=(3, 200, 300))
+# if __name__ == '__main__':
+#     model = SuperResolutionModel()
+#
+#     torchsummary.summary(model=model, input_data=(3, 200, 300))
