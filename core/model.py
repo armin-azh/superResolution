@@ -11,14 +11,14 @@ class SuperResolutionModel(nn.Module):
 
         # first block
         self._up_sample = nn.Upsample(scale_factor=(1, 1))
-        self._conv1 = nn.ConvTranspose2d(in_channels=3, out_channels=64, kernel_size=(255, 255))
-        self._conv2 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(251, 251))
-        self._conv3 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(251, 251))
+        self._conv1 = nn.ConvTranspose2d(in_channels=3, out_channels=64, kernel_size=(9, 9))
+        self._conv2 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(5, 5))
+        self._conv3 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(5, 5))
 
         # second bock
-        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(355, 355))
-        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(351, 351))
-        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(351, 351))
+        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(9, 9))
+        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(5, 5))
+        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(5, 5))
 
         self._relu = nn.ReLU(inplace=True)
 
@@ -55,4 +55,4 @@ class SuperResolutionModel(nn.Module):
 # if __name__ == '__main__':
 #     model = SuperResolutionModel()
 #
-#     torchsummary.summary(model=model, input_data=(3, 200, 300))
+#     torchsummary.summary(model=model, input_data=(3, 100, 200))

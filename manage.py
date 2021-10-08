@@ -39,7 +39,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_dir', help="model state dictionary (.pth)", type=str, default="")
 
     parser.add_argument("--lr", help="learning rate", type=float, default=1e-3)
-    parser.add_argument("--batch_size", help="batch size", type=int, default=2)
+    parser.add_argument("--batch_size", help="batch size", type=int, default=16)
     parser.add_argument("--epochs", help="number of epochs", type=int, default=100)
     parser.add_argument("--n_workers", help="number of threads", type=int, default=2)
 

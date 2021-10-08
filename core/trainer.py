@@ -53,7 +53,7 @@ class Trainer:
                 step += 1
 
                 if step % 100 == 0:
-                    print(f"[{epoch+1}|epochs] | Train Loss: {tm_loss[-1]}")
+                    print(f"[{epoch+1}|{epochs}] | Train Loss: {tm_loss[-1]}")
 
             total_loss.append(np.array(tm_loss).mean())
             # end training process
