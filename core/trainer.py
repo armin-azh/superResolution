@@ -75,7 +75,7 @@ class Trainer:
 
             total_valid_loss.append(np.array(tm_valid_loss).mean())
 
-            print(f"[{epoch + 1}|epochs] | Train Loss: {total_loss[-1]}, Valid Loss: {total_valid_loss[-1]}")
+            print(f"[{epoch + 1}|{epochs}] | Train Loss: {total_loss[-1]}, Valid Loss: {total_valid_loss[-1]}")
             # end validation process
 
         total_loss = np.array(total_loss)
