@@ -16,9 +16,9 @@ class SuperResolutionModel(nn.Module):
         self._conv3 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(251, 251))
 
         # second bock
-        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(255, 255))
-        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(251, 251))
-        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(251, 251))
+        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(355, 355))
+        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(351, 351))
+        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(351, 351))
 
         self._relu = nn.ReLU(inplace=True)
 
