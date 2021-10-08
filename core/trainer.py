@@ -53,7 +53,7 @@ class Trainer:
                 step += 1
 
                 if step % 100 == 0:
-                    print(f"[{epoch+1}|{epochs}] | Train Loss: {tm_loss[-1]}")
+                    print(f"[{epoch + 1}|{epochs}] | Train Loss: {tm_loss[-1]}")
 
             total_loss.append(np.array(tm_loss).mean())
             # end training process
@@ -78,4 +78,10 @@ class Trainer:
             print(f"[{epoch + 1}|epochs] | Train Loss: {total_loss[-1]}, Valid Loss: {total_valid_loss[-1]}")
             # end validation process
 
+        total_loss = np.array(total_loss)
+        total_valid_loss = np.array(total_valid_loss)
 
+        np.save(str(save_path.joinpath("train_loss.npy")), total_loss)
+        np.save(str(save_path.joinpath("valid_loss.npy")), total_valid_loss)
+
+        torch.save(self._model.state_dict(), str(save_path.joinpath("model.pth")))
