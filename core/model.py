@@ -10,15 +10,15 @@ class SuperResolutionModel(nn.Module):
         super(SuperResolutionModel, self).__init__()
 
         # first block
-        self._up_sample = nn.Upsample(scale_factor=(2, 2))
-        self._conv1 = nn.ConvTranspose2d(in_channels=3, out_channels=64, kernel_size=(21, 21))
-        self._conv2 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(17, 17))
-        self._conv3 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(17, 17))
+        self._up_sample = nn.Upsample(scale_factor=(1, 1))
+        self._conv1 = nn.ConvTranspose2d(in_channels=3, out_channels=64, kernel_size=(25, 25))
+        self._conv2 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(21, 21))
+        self._conv3 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(21, 21))
 
         # second bock
-        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(21, 21))
-        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(17, 17))
-        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(17, 17))
+        self._conv4 = nn.ConvTranspose2d(in_channels=9, out_channels=64, kernel_size=(25, 25))
+        self._conv5 = nn.ConvTranspose2d(in_channels=64, out_channels=32, kernel_size=(21, 21))
+        self._conv6 = nn.ConvTranspose2d(in_channels=32, out_channels=3, kernel_size=(21, 21))
 
         self._relu = nn.ReLU(inplace=True)
 
